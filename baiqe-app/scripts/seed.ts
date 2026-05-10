@@ -2,8 +2,8 @@ import "dotenv/config";
 
 import { eq } from "drizzle-orm";
 
-import { db } from "@/src/db";
-import { bikes, users } from "@/src/db/schema";
+import { db } from "@/db";
+import { bikes, users } from "@/db/schema";
 
 async function seed() {
   const existingUser = await db.query.users.findFirst({

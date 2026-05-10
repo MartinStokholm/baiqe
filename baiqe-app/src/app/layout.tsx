@@ -3,9 +3,12 @@ import { Geist, Geist_Mono, Roboto, Roboto_Slab } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const robotoSlabHeading = Roboto_Slab({subsets:['latin'],variable:'--font-heading'});
+const robotoSlabHeading = Roboto_Slab({
+  subsets: ["latin"],
+  variable: "--font-heading",
+});
 
-const roboto = Roboto({subsets:['latin'],variable:'--font-sans'});
+const roboto = Roboto({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +33,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", roboto.variable, robotoSlabHeading.variable)}
+      className={cn(
+        "h-full",
+        "antialiased",
+        geistSans.variable,
+        geistMono.variable,
+        "font-sans",
+        roboto.variable,
+        robotoSlabHeading.variable,
+      )}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
